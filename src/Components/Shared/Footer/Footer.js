@@ -1,11 +1,13 @@
 import React from 'react';
-import './Footer.css'
+import './Footer.css';
+import logo from '../../../images/logo.png'
 
 const Footer = () => {
     return (
         <div>
             <footer className="footer p-10 bg-neutral text-neutral-content">
                 <div className='m-9'>
+                    <img className='h-9' src={logo} alt="Logo" />
                     <p>CONSTRA Tools Industries Ltd.<br />Providing reliable tech since 1992</p>
                 </div>
                 <div>

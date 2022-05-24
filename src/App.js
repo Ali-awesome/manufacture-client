@@ -1,11 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import './App.css';
+import Navbar from './Components/Shared/Navbar/Navbar';
 
 function App() {
   return (
     <div className="App">
-      <h1>This is home <FontAwesomeIcon icon={faSearch} />  </h1>
+      <Navbar></Navbar>
 
     </div>
   );

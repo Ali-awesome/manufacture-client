@@ -6,7 +6,7 @@ import './Who.css'
 const Who = () => {
     return (
         <div className='m-10'>
-            <div className="hero min-h-screen bg-base-200 rounded-lg">
+            <div className="hero bg-base-200 rounded-lg">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="carousel basis-1/2 h-80 rounded-md">
                         <div id="slide1" className="carousel-item relative w-full">

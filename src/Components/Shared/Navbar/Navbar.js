@@ -21,7 +21,7 @@ const Navbar = () => {
             <Link to={'/tools'}>Tools</Link>
         </li>
         <li>
-            <Link to={'/login'}>Login</Link>
+            <Link to={'/auth'}>Login</Link>
         </li>
         {/* <li>
             <Link >Log-Out</Link>

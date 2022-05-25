@@ -1,0 +1,55 @@
+blockquote {
+    padding: 25px;
+    margin: 20px 0;
+    background: #f9f9f9;
+    position: relative;
+    border-left: 3px solid #ffb600;
+    padding-left: 40px;
+}
+
+blockquote.text-center {
+    border-top: 3px solid #ffb600;
+    border-left: 0;
+    padding-left: 25px;
+    padding-top: 50px;
+}
+
+blockquote.text-center:before {
+    left: 50%;
+    top: 10px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+blockquote.text-right {
+    border-right: 3px solid #ffb600;
+    padding-right: 40px;
+    border-left: 0;
+    padding-left: 25px;
+}
+
+blockquote.text-right:before {
+    left: auto;
+    right: 5px;
+}
+
+blockquote:before {
+    content: "\f10d";
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    font-size: 28px;
+    color: #E5E5E5;
+    top: 5px;
+    left: 5px;
+    font-weight: 700;
+    z-index: 0;
+}
+
+blockquote p {
+    font-size: 14px;
+    line-height: 22px;
+    position: relative;
+    z-index: 1;
+    font-style: italic;
+    margin-bottom: 0;
+}

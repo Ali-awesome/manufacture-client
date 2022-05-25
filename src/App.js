@@ -7,6 +7,8 @@ import Footer from './Components/Shared/Footer/Footer';
 import Social from './Components/Authentication/Social';
 import Login from './Components/Authentication/Login';
 import SignUp from './Components/Authentication/SignUp';
+import RequireAuth from './Components/Authentication/RequireAuth';
+import Dashboard from './Components/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -15,7 +17,11 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
-        <Route path='/dashboard' element={<Home></Home>}></Route>
+        <Route path='/dashboard' element={
+          <RequireAuth>
+            <Dashboard></Dashboard>
+          </RequireAuth>
+        }></Route>
         <Route path='/*' element={<NotFound></NotFound>}></Route>
         <Route path='/auth' element={<Social></Social>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>

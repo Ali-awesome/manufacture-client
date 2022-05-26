@@ -3,8 +3,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../../firebase.init';
-import logo from '../../../images/logo.png'
-import './Navbar.css'
+import './Navbar.css';
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
@@ -46,7 +45,7 @@ const Navbar = () => {
         <div>
             <div className='container flex flex-row h-28 border-b-2'>
                 <div className='basis-1/3 m-9'>
-                    <Link to={'/home'}> <img className='h-9' src={logo} alt="Logo" /></Link>
+                    <Link to={'/home'}> <img className='h-9' src='https://i.postimg.cc/Pqy2hTSZ/logo.png' alt="Logo" /></Link>
                 </div>
                 <div className='flex basis-2/3 justify-end'>
                     <div className="card bg-base-100 border-r-2">
@@ -73,7 +72,7 @@ const Navbar = () => {
                                 {navigation}
                             </ul>
                         </div>
-                        <div className='basis-2/3 '><Link to={'/home'}> <img className='h-9' src={logo} alt="Logo" /></Link></div>
+                        <div className='basis-2/3 '><Link to={'/home'}> <img className='h-9' src='https://i.postimg.cc/Pqy2hTSZ/logo.png' alt="Logo" /></Link></div>
                     </div>
                 </div>
                 <div className="hidden lg:flex mx-auto flex-row text-white">

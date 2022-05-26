@@ -56,32 +56,32 @@ const SignUp = () => {
     return (
         <div className='register-form w-80 h-full shadow-xl rounded-xl my-5 mx-auto flex flex-col mb-5'>
             <h2 className='text-center text-3xl mt-2'>Register to Enter.</h2>
-            <div class="flex flex-col w-full my-5 border-opacity-50">
-                <div class="grid h-full w-80 card bg-base-300 rounded-box place-items-center">
+            <div className="flex flex-col w-full my-5 border-opacity-50">
+                <div className="grid h-full w-80 card bg-base-300 rounded-box place-items-center">
                     <button type="button" className="btn my-2"><Link to="/login" className='p-2 text-decoration-none' onClick={navigateToLogin}>I have an account!</Link></button>
                     <form onSubmit={handleRegister}>
-                        <div class="form-control w-64 mx-auto">
-                            <label class="input-group input-group-vertical">
+                        <div className="form-control w-64 mx-auto">
+                            <label className="input-group input-group-vertical">
                                 <span>Name</span>
-                                <input type="text" name='name' placeholder="Dhalia Khao" class="input input-bordered" required />
+                                <input type="text" name='name' placeholder="Dhalia Khao" className="input input-bordered" required />
                             </label>
                         </div>
-                        <div class="form-control w-64 mx-auto">
-                            <label class="input-group input-group-vertical">
+                        <div className="form-control w-64 mx-auto">
+                            <label className="input-group input-group-vertical">
                                 <span>Email</span>
-                                <input type="text" name='email' placeholder="info@site.com" class="input input-bordered" required />
+                                <input type="text" name='email' placeholder="info@site.com" className="input input-bordered" required />
                             </label>
                         </div>
-                        <div class="form-control w-64 mx-auto">
-                            <label class="input-group input-group-vertical">
+                        <div className="form-control w-64 mx-auto">
+                            <label className="input-group input-group-vertical">
                                 <span>Password</span>
-                                <input type="password" name='password' placeholder="123abc" class="input input-bordered" required />
+                                <input type="password" name='password' placeholder="123abc" className="input input-bordered" required />
                             </label>
                         </div>
-                        <div class="form-control w-64 mx-auto">
-                            <label class="input-group input-group-vertical">
+                        <div className="form-control w-64 mx-auto">
+                            <label className="input-group input-group-vertical">
                                 <span>Confirm Password</span>
-                                <input type="password" name='confirm' placeholder="123abc" class="input input-bordered" required />
+                                <input type="password" name='confirm' placeholder="123abc" className="input input-bordered" required />
                             </label>
                         </div>
                         <input onClick={() => setAgree(!agree)} type="checkbox" name="terms" id="terms" />
@@ -93,7 +93,7 @@ const SignUp = () => {
                             value="Register" />
                     </form>
                 </div>
-                <div class="divider">OR</div>
+                <div className="divider">OR</div>
                 <GoogleAuth></GoogleAuth>
             </div>
         </div>

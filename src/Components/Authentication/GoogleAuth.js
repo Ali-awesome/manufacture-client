@@ -29,7 +29,7 @@ const GoogleAuth = () => {
     }
     return (
         <div>
-            <div class="grid h-24 card bg-base-300 rounded-box place-items-center">
+            <div className="grid h-24 card bg-base-300 rounded-box place-items-center">
                 {errorElement}
                 <button
                     onClick={() => signInWithGoogle()}

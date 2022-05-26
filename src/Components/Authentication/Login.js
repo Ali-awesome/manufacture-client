@@ -95,7 +95,7 @@ const Login = () => {
                         <input className='btn w-full max-w-xs text-white' type="submit" value="Login" />
                     </form>
                     <p><Link className='text-cyan-500 font-bold' to="/register">Create New Account!</Link></p>
-                    <div class="divider">OR</div>
+                    <div className="divider">OR</div>
                     <GoogleAuth></GoogleAuth>
                 </div>
             </div>

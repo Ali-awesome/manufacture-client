@@ -1,0 +1,98 @@
+[
+    {
+        "name": "Measuring Tape 25ft",
+        "price": "10",
+        "min-order": "50",
+        "quantity": "1000",
+        "description": "Stainless steel made and durable.",
+        "img": "https://i.postimg.cc/WpGgkkfT/measuringtap25ft.jpg"
+    },
+    {
+        "name": "Measuring Tape 16ft",
+        "price": "8",
+        "min-order": "50",
+        "quantity": "1000",
+        "description": "Stainless steel made and durable.",
+        "img": "https://i.postimg.cc/7hkzRHhF/measuringtape.jpg"
+    },
+    {
+        "name": "Tool Box",
+        "price": "150",
+        "min-order": "50",
+        "quantity": "1000",
+        "description": "Essential Tools in a box",
+        "img": "https://i.postimg.cc/Qtp912m0/toolbox.jpg"
+    },
+    {
+        "name": "Cement Mixer",
+        "price": "1000",
+        "min-order": "10",
+        "quantity": "1000",
+        "description": "Long lasting cement mixer",
+        "img": "https://i.postimg.cc/Ss88V2SL/cementmixer.webp"
+    },
+    {
+        "name": "Chisel Set",
+        "price": "200",
+        "min-order": "50",
+        "quantity": "1000",
+        "description": "Stainless Steel made and Long lasting",
+        "img": "https://i.postimg.cc/sDKWnRrL/chiselset.jpg"
+    },
+    {
+        "name": "Construction Hat",
+        "price": "300",
+        "min-order": "50",
+        "quantity": "1000",
+        "description": "Durable plastic made for protection",
+        "img": "https://i.postimg.cc/jS57mkqS/constructionhat.jpg"
+    },
+    {
+        "name": "Cut off saw",
+        "price": "350",
+        "min-order": "30",
+        "quantity": "1000",
+        "description": "Energy Saving Rod cutter",
+        "img": "https://i.postimg.cc/ZqW6BsXM/cutoffsaw.jpg"
+    },
+    {
+        "name": "Demolition Hammer",
+        "price": "1000",
+        "min-order": "25",
+        "quantity": "1000",
+        "description": "Best quality with maximum power",
+        "img": "https://i.postimg.cc/1XGGRgbR/demolitionhammer.jpg"
+    },
+    {
+        "name": "Finishing Trowel",
+        "price": "10",
+        "min-order": "50",
+        "quantity": "1000",
+        "description": "Carbon Made finishing trowel cementer",
+        "img": "https://i.postimg.cc/65hrDvdY/finishingtrowel.jpg"
+    },
+    {
+        "name": "Gloves",
+        "price": "10",
+        "min-order": "60",
+        "quantity": "1000",
+        "description": "Best protection for hands on work",
+        "img": "https://i.postimg.cc/YCq6kCRk/gloves.jpg"
+    },
+    {
+        "name": "Ladder",
+        "price": "200",
+        "min-order": "50",
+        "quantity": "1000",
+        "description": "Foldable and easy to carry",
+        "img": "https://i.postimg.cc/FKw3jg4s/ladder.jpg"
+    },
+    {
+        "name": "Sledge Hammer",
+        "price": "300",
+        "min-order": "50",
+        "quantity": "1000",
+        "description": "Carbon made sledge hammer with durability",
+        "img": "https://i.postimg.cc/63s47Wr8/largesledgehammer.webp"
+    }
+]

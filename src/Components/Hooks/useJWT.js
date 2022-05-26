@@ -8,8 +8,7 @@ const useJWT = (user) => {
             console.log(user);
             const email = user?.user?.email;
             if (email) {
-                let data;
-                // const { data } = await axios.post('https://glacial-castle-94530.herokuapp.com/login', { email });
+                const { data } = await axios.post('http://localhost:5000/login', { email });
                 setToken(data.accessToken);
                 localStorage.setItem('accessToken', data.accessToken);
             }

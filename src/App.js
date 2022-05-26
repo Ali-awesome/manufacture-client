@@ -8,6 +8,8 @@ import Login from './Components/Authentication/Login';
 import SignUp from './Components/Authentication/SignUp';
 import RequireAuth from './Components/Authentication/RequireAuth';
 import Dashboard from './Components/Dashboard/Dashboard';
+import AllTools from './Components/AllTools/AllTools';
+import Purchase from './Components/Purchase/Purchase';
 
 function App() {
   return (
@@ -20,6 +22,14 @@ function App() {
           <RequireAuth>
             <Dashboard></Dashboard>
           </RequireAuth>
+        }></Route>
+        <Route path='/tools/:Id' element={
+          <RequireAuth>
+            <Purchase></Purchase>
+          </RequireAuth>
+        }></Route>
+        <Route path='/tools' element={
+          <AllTools></AllTools>
         }></Route>
         <Route path='/*' element={<NotFound></NotFound>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>

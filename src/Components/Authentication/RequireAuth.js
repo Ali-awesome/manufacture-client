@@ -20,8 +20,8 @@ const RequireAuth = ({ children }) => {
     // Did not enforce!
     // if (user.providerData[0]?.providerId === 'password' && !user.emailVerified) {
     //     return <div className='text-center mt-5'>
-    //         <h3 className='text-danger'>Your Email is not verified!!</h3>
-    //         <h5 className='text-success'> Please Verify your email address</h5>
+    //         <h3 className=''>Your Email is not verified!!</h3>
+    //         <h5 className=''> Please Verify your email address</h5>
     //         <button
     //             className='btn btn-primary'
     //             onClick={async () => {

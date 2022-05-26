@@ -24,16 +24,22 @@ const Navbar = () => {
             </li>
         }
         <li>
-            <Link to={'/summery'}>Summery</Link>
+            <a href="/#summery">Summery</a>
         </li>
         <li>
-            <Link to={'/reviews'}>Reviews</Link>
+            <a href="/#contact">Contact Us </a>
+        </li>
+        <li>
+            <a href="/#reviews">Reviews</a>
         </li>
         <li>
             <Link to={'/tools'}>Tools</Link>
         </li>
         <li>
-            {user ? <button className="btn btn-ghost" onClick={logout} >Sign Out</button> : <Link to="/auth">Login</Link>}
+            <Link to={'/portfolio'}>My Portfolio</Link>
+        </li>
+        <li>
+            {user ? <button className="btn btn-ghost" onClick={logout} ><span className='text-amber-400'>{user?.displayName}</span> Sign Out</button> : <Link to="/login">Login</Link>}
         </li>
     </>
     return (
@@ -71,7 +77,7 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className="hidden lg:flex mx-auto flex-row text-white">
-                    <ul className="menu menu-horizontal p-0 space-x-24">
+                    <ul className="menu menu-horizontal p-0 space-x-16">
                         {navigation}
                     </ul>
                 </div>

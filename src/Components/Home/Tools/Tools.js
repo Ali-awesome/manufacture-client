@@ -5,7 +5,6 @@ import Loading from '../../Shared/Loading/Loading';
 
 const Tools = () => {
     const [tools, setTools] = useTool();
-    const { _id, name, price, minorder, quantity, description, img } = tools;
     const navigate = useNavigate();
 
 
@@ -16,7 +15,7 @@ const Tools = () => {
     return (
         <div className=' bg-base-200 py-5'>
             <h2 className='text-3xl font-bold'>Tools</h2>
-            <div className='flex flex-col lg:flex-row mx-3 my-5 gap-5 grid grid-cols-1 lg:grid-cols-3 '>
+            <div className='mx-3 my-5 gap-5 grid grid-cols-1 lg:grid-cols-3'>
                 {
                     tools.length === 0 ? <Loading></Loading>
                         : tools.slice(0, 6).map(tool => <div key={tool._id} className="card w-full bg-base-100 shadow-xl">
@@ -39,6 +38,7 @@ const Tools = () => {
                 }
 
             </div>
+            <div><button className='btn'><Link to={'/tools'}>See All Tools</Link></button></div>
         </div>
     );
 };

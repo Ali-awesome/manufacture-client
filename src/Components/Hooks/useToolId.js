@@ -5,6 +5,7 @@ const useToolId = Id => {
 
     useEffect(() => {
         const url = `http://localhost:5000/tools/${Id}`;
+        console.log(url)
         fetch(url)
             .then(res => res.json())
             .then(data => setToolId(data));

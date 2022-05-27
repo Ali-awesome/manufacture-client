@@ -15,29 +15,28 @@ const SignUp = () => {
         loading,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [updateProfile, updating] = useUpdateProfile(auth);
-
-
     const [token] = useJWT(user);
     const navigate = useNavigate();
 
     const navigateToLogin = () => {
         navigate('/login');
-    }
+    };
 
     if (loading || updating) {
         return <Loading></Loading>
-    }
+    };
 
     if (token) {
         navigate('/home');
-    }
+    };
 
     const handleRegister = async (event) => {
         event.preventDefault();
         const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
-        const confirm = event.target.confirm.value
+        const confirm = event.target.confirm.value;
+        setAgree(!agree);
 
 
         if (password === confirm) {
@@ -48,7 +47,6 @@ const SignUp = () => {
         else {
             toast('Password did not match!');
             event.target.reset();
-            setAgree(!agree);
         }
 
     }

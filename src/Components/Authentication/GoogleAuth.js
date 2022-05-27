@@ -25,6 +25,7 @@ const GoogleAuth = () => {
         errorElement = <p className='text-danger'>Error: {error?.message}</p>
     }
     if (token) {
+
         navigate(from, { replace: true });
     }
     return (

@@ -11,6 +11,7 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import AllTools from './Components/AllTools/AllTools';
 import Purchase from './Components/Purchase/Purchase';
 import Blog from './Components/Blog/Blog';
+import Portfolio from './Components/Portfolio/Portfolio';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/blogs' element={<Blog></Blog>}></Route>
+        <Route path='/portfolio' element={<Portfolio></Portfolio>}></Route>
         <Route path='/dashboard' element={
           <RequireAuth>
             <Dashboard></Dashboard>

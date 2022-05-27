@@ -35,6 +35,9 @@ const Navbar = () => {
             <Link to={'/tools'}>Tools</Link>
         </li>
         <li>
+            <Link to={'/blogs'}>Blog</Link>
+        </li>
+        <li>
             <Link to={'/portfolio'}>My Portfolio</Link>
         </li>
         <li>
@@ -76,7 +79,7 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className="hidden lg:flex mx-auto flex-row text-white">
-                    <ul className="menu menu-horizontal p-0 space-x-10">
+                    <ul className="menu menu-horizontal p-0 space-x-8">
                         {navigation}
                     </ul>
                 </div>

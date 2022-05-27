@@ -10,6 +10,7 @@ import RequireAuth from './Components/Authentication/RequireAuth';
 import Dashboard from './Components/Dashboard/Dashboard';
 import AllTools from './Components/AllTools/AllTools';
 import Purchase from './Components/Purchase/Purchase';
+import Blog from './Components/Blog/Blog';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/blogs' element={<Blog></Blog>}></Route>
         <Route path='/dashboard' element={
           <RequireAuth>
             <Dashboard></Dashboard>

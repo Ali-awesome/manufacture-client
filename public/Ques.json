@@ -1,0 +1,22 @@
+[
+    {
+        "question": "How will you improve a performance of react application?",
+        "answer": "Optimizing application performance is key for developers who are mindful of keeping a users experience positive to keep them on an app and engaged.some common practices are * keeping states local * * preventing unnecessary re render * * Code splliting via dynamic import * * List visualization * * Lazy loading on images *"
+    },
+    {
+        "question": "What are the different ways to manage a state in react application?",
+        "answer": "There are basically four ways to handle react states and they are:- * Local state * * Global state * * Server state * * URL state * "
+    },
+    {
+        "question": "How does prototypal inheritance work?",
+        "answer": "The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object. Traditionally, in order to get and set the [[Prototype]] of an object, we use Object.getPrototypeOf and Object.setPrototypeOf. Nowadays, in modern language, it is being set using __proto__.We use it beacause Prototypical inheritance allows us to reuse the properties or methods from one JavaScript object to another through a reference pointer function."
+    },
+    {
+        "question": "Why do we not set the state directly in react?",
+        "answer": "Mutating state directly can lead to odd bugs, and components that are hard to optimize. That if you mutate state directly and then subsequently call this.setState this may replace (overwrite?) the mutation you made. That setState may mutate this.state effectively in an asynchronous / deferred way and so when accessing this.state right after calling this.setState you are not guaranteed to access the final mutated state. By this is not an issue if this.setState is the last call of the update function."
+    },
+    {
+        "question": "what is unit test and why should we write it?",
+        "answer": "Definition: Unit testing is a software testing method where “units”—the individual components of software—are tested. Developers write unit tests for their code to make sure that the code works correctly. This helps to detect and protect against bugs in the future.We should use it because:-  * Unit testing saves time and money * * Unit testing provides documentation * * Reusable and Reliable * * Unit testing helps gauge performance * * Unit testing improves code coverage * * Unit testing reduces code complexity *"
+    }
+]

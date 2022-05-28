@@ -32,8 +32,9 @@ const ReviewModal = ({ data }) => {
     }
 
     const onSubmit = data => {
+        const userName = user?.displayName
         const email = user?.email
-        const review = { email, name, ...data };
+        const review = { email, userName, name, ...data };
         fetch('http://localhost:5000/review', {
             method: 'POST',
             headers: {
@@ -58,27 +59,27 @@ const ReviewModal = ({ data }) => {
     }
     return (
         <div>
-            <input type="checkbox" id="review-modal" class="modal-toggle" />
-            <div class="modal">
-                <div class="modal-box relative">
-                    <label onClick={handleClick} for="review-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h3 class="font-bold text-lg">Congratulations Please Give a Riview!</h3>
+            <input type="checkbox" id="review-modal" className="modal-toggle" />
+            <div className="modal">
+                <div className="modal-box relative">
+                    <label onClick={handleClick} htmlFor="review-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <h3 className="font-bold text-lg">Congratulations Please Give a Riview!</h3>
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <textarea class="mt-5 block textarea textarea-bordered w-full" placeholder="Type Here"
+                        <textarea className="mt-5 block textarea textarea-bordered w-full" placeholder="Type Here"
                             {...register("review", { required: true })} ></textarea>
-                        <div class="block pt-3 rating">
+                        <div className="block pt-3 rating">
                             <div className='flex flex-row justify-center mb-3'>
-                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400"
+                                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400"
                                     value="1"
                                     {...register("rating", { required: true, onChange: e => handleValue(e) })}
                                 />
-                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" value="2"
+                                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" value="2"
                                     {...register("rating", { required: true, onChange: e => handleValue(e) })} />
-                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" value="3"
+                                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" value="3"
                                     {...register("rating", { required: true, onChange: e => handleValue(e) })} />
-                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" value="4"
+                                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" value="4"
                                     {...register("rating", { required: true, onChange: e => handleValue(e) })} />
-                                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" value="5"
+                                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" value="5"
                                     {...register("rating", { required: true, onChange: e => handleValue(e) })} />
                                 <span className='ml-1'>({value})</span>
                             </div>
@@ -86,8 +87,8 @@ const ReviewModal = ({ data }) => {
 
                         <button className="btn btn-wide " type="submit" >Submit</button>
                     </form>
-                    <div class="modal-action">
-                        <label htmlFor="review-modal" ref={closeRef} class="btn hidden">Close!</label>
+                    <div className="modal-action">
+                        <label htmlhtmlFor="review-modal" ref={closeRef} className="btn hidden">Close!</label>
                     </div>
                 </div>
             </div>

@@ -83,7 +83,7 @@ const SignUp = () => {
                             </label>
                         </div>
                         <input onClick={() => setAgree(!agree)} type="checkbox" name="terms" id="terms" />
-                        <label className={`ps-2 ${agree ? '' : 'text-red-500'}`} htmlFor="terms">Accept Terms and Conditions?</label>
+                        <label className={`ps-2 ${agree ? '' : 'text-red-500'}`} htmlhtmlFor="terms">Accept Terms and Conditions?</label>
                         <input
                             disabled={!agree}
                             className='w-52 mx-auto btn my-2'

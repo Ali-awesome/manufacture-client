@@ -6,7 +6,7 @@ import './Summery.css';
 
 const Summery = () => {
     return (
-        <div id="facts" className='flex flex-col lg:flex-row gap-2 m-5'>
+        <div id="summery" className='flex flex-col lg:flex-row gap-2 m-5'>
             <div className="card w-full mb-3 bg-base-100 shadow-xl image-full">
                 <figure><img src="https://i.postimg.cc/d0gGNG4Q/construction.jpg" alt="Tools" /></figure>
                 <div className="card-body flex justify-center align-middle text-center">

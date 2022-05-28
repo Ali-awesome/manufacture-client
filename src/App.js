@@ -12,6 +12,8 @@ import AllTools from './Components/AllTools/AllTools';
 import Purchase from './Components/Purchase/Purchase';
 import Blog from './Components/Blog/Blog';
 import Portfolio from './Components/Portfolio/Portfolio';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -40,6 +42,7 @@ function App() {
         <Route path='/register' element={<SignUp></SignUp>}></Route>
       </Routes>
       <Footer></Footer>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }

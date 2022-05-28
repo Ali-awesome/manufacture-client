@@ -3,8 +3,11 @@ import React from 'react';
 import { faLocation, faAt, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import GoogleAuth from '../../Authentication/GoogleAuth';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
 
 const Contact = () => {
+    const [user] = useAuthState(auth)
     return (
         <div id='contact' className='text-center'>
             <p className="text-xl">Reaching Our Office</p>
@@ -32,21 +35,23 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex flex-col h-80 justify-center w-80 mx-auto border-opacity-50">
-                <div className="grid h-36 card bg-base-300 rounded-box place-items-center">
-                    <button
-                        className='btn text-white rounded-xl mx-auto mb-1'>
-                        <Link className='px-2' to={'/login'}>Already a Member?</Link>
-                    </button>
-                    <button
-                        className='btn text-white rounded-xl mx-auto mb-1'>
-                        <Link className='px-2' to={'/register'}>Need an Account?</Link>
-                    </button>
-                </div>
-                <div className="divider">OR</div>
-                <GoogleAuth></GoogleAuth>
+            {
+                user ? '' : <div className="flex flex-col h-80 justify-center w-80 mx-auto border-opacity-50">
+                    <div className="grid h-36 card bg-base-300 rounded-box place-items-center">
+                        <button
+                            className='btn text-white rounded-xl mx-auto mb-1'>
+                            <Link className='px-2' to={'/login'}>Already a Member?</Link>
+                        </button>
+                        <button
+                            className='btn text-white rounded-xl mx-auto mb-1'>
+                            <Link className='px-2' to={'/register'}>Need an Account?</Link>
+                        </button>
+                    </div>
+                    <div className="divider">OR</div>
+                    <GoogleAuth></GoogleAuth>
 
-            </div>
+                </div>
+            }
 
         </div>
     );

@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import useToolId from '../Hooks/useToolId';
 import ReviewModal from './ReviewModal';
@@ -12,8 +13,8 @@ const Purchase = () => {
     const openRef = useRef()
 
     const { Id } = useParams();
-    const [toolId, setToolId] = useToolId(Id);
-    const { _id, name, minorder, quantity, price, img } = toolId;
+    const [toolId] = useToolId(Id);
+    const { name, minorder, quantity, price, img, description } = toolId;
 
     const [user] = useAuthState(auth);
 
@@ -36,7 +37,33 @@ const Purchase = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        openRef.current.click()
+        const email = user?.email;
+        const userName = user?.displayName;
+        const productName = name;
+        const quantity = event.target.orderQuantity.value;
+        const totalPrice = prices;
+        const phone = event.target.phoneNumber.value;
+        const address = event.target.address.value;
+
+        const order = { email, userName, productName, quantity, totalPrice, phone, address }
+
+
+        fetch('http://localhost:5000/order', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(order),
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.insertedId) {
+                    openRef.current.click();
+                    toast('Thank you for your Review!')
+                }
+
+            })
+
     }
     return (
         <div style={{ backgroundImage: `url(${img})` }} className='flex justify-center items-center'>
@@ -44,7 +71,12 @@ const Purchase = () => {
                 <div class="hero-content flex-col lg:flex-row-reverse">
                     <div class="text-center lg:text-left bg-base-200 p-10">
                         <h1 class="text-5xl font-bold">Order {name} </h1>
-                        <p class="py-6 ">Please provide valid information asked to order the product and get it delivered.</p>
+                        <p><b>Minimum Order Quantity: {minorder}</b></p>
+                        <p><b>Price per Unit: {price}</b></p>
+                        <p><b>Available Quantity: {quantity}</b></p>
+                        <p><b>Order Description: {description}</b></p>
+                        <img src={img} className='w-36 h-36 mx-auto' alt="" />
+                        <p class="py-6 text-info font-bold ">Please provide valid information asked to order the product and get it delivered.</p>
                     </div>
                     <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <div class="card-body">
@@ -96,6 +128,7 @@ const Purchase = () => {
                                             name='orderQuantity'
                                             className="input input-bordered w-8/12 max-w-xs" required />
                                         <input
+                                            name='totalPrice'
                                             value={'$ ' + prices}
                                             className="input input-bordered w-4/12 max-w-xs" disabled={true} />
 
@@ -103,6 +136,25 @@ const Purchase = () => {
                                     {
                                         quantityError && <span className='text-error text-sm'>{quantityError}  </span>
                                     }
+                                </div>
+
+                                <div className="form-control w-full max-w-xs">
+                                    <label className="label">
+                                        <span className="label-text">Contact Number</span>
+                                    </label>
+                                    <input
+                                        type="Tel"
+                                        name='phoneNumber'
+                                        className="input input-bordered w-full max-w-xs" minLength={6} maxLength={20} required />
+                                </div>
+                                <div className="form-control w-full max-w-xs">
+                                    <label className="label">
+                                        <span className="label-text">Address</span>
+                                    </label>
+                                    <input
+                                        type="textArea"
+                                        name='address'
+                                        className="input input-bordered w-full max-w-xs" required />
                                 </div>
 
 

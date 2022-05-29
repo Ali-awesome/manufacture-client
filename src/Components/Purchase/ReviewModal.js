@@ -3,7 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import Loading from '../Shared/Loading/Loading';
 import auth from '../../firebase.init';
 import { useForm } from 'react-hook-form';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
 const ReviewModal = ({ data }) => {
@@ -47,7 +47,7 @@ const ReviewModal = ({ data }) => {
                 if (data.insertedId) {
                     closeRef.current.click()
                     navigate('/tools')
-                    toast.success("Success Notification !", {
+                    toast.success("Wanna buy something else?", {
                         position: toast.POSITION.TOP_CENTER
                     })
                 }
@@ -88,11 +88,10 @@ const ReviewModal = ({ data }) => {
                         <button className="btn btn-wide " type="submit" >Submit</button>
                     </form>
                     <div className="modal-action">
-                        <label htmlhtmlFor="review-modal" ref={closeRef} className="btn hidden">Close!</label>
+                        <label htmlFor="review-modal" ref={closeRef} className="btn hidden">Close!</label>
                     </div>
                 </div>
             </div>
-            <ToastContainer></ToastContainer>
         </div>
     );
 };

@@ -1,9 +1,11 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import './Navbar.css';
+import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
@@ -82,6 +84,11 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal p-0 space-x-8">
                         {navigation}
                     </ul>
+                </div>
+                <div className="mx-auto">
+                    <label tabIndex="1" for="dashboard-sidebar" className="btn btn-ghost swap swap-rotate lg:hidden text-white">
+                        <FontAwesomeIcon icon={faArrowRightFromBracket}></FontAwesomeIcon>
+                    </label>
                 </div>
             </div>
         </div >

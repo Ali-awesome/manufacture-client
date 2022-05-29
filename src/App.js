@@ -14,6 +14,16 @@ import Blog from './Components/Blog/Blog';
 import Portfolio from './Components/Portfolio/Portfolio';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import MyProfile from './Components/Dashboard/MyProfile';
+import AddReview from './Components/Dashboard/AddReview';
+// import RequireAdmin from './Components/Authentication/RequireAdmin';
+import Payment from './Components/Dashboard/Payment';
+import MyOrders from './Components/Dashboard/MyOrders';
+import AllUsers from './Components/Dashboard/AllUsers';
+import AddProduct from './Components/Dashboard/AddProduct';
+import ManageProduct from './Components/Dashboard/ManageProduct';
+import ManageOrder from './Components/Dashboard/ManageOrder';
+import RequireAdmin from './Components/Authentication/RequireAdmin';
 
 function App() {
   return (
@@ -24,11 +34,16 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/blogs' element={<Blog></Blog>}></Route>
         <Route path='/portfolio' element={<Portfolio></Portfolio>}></Route>
-        <Route path='/dashboard' element={
-          <RequireAuth>
-            <Dashboard></Dashboard>
-          </RequireAuth>
-        }></Route>
+        <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} >
+          <Route index element={<MyProfile></MyProfile>}></Route>
+          <Route path="review" element={<AddReview></AddReview>}></Route>
+          <Route path="orders" element={<MyOrders></MyOrders>}></Route>
+          <Route path="payment/:id" element={<Payment></Payment>}></Route>
+          <Route path="users" element={<RequireAdmin><AllUsers></AllUsers></RequireAdmin>}></Route>
+          <Route path="addProduct" element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>}></Route>
+          <Route path="manageProduct" element={<RequireAdmin><ManageProduct></ManageProduct></RequireAdmin>}></Route>
+          <Route path="manageOrder" element={<RequireAdmin><ManageOrder></ManageOrder></RequireAdmin>}></Route>
+        </Route>
         <Route path='/tools/:Id' element={
           <RequireAuth>
             <Purchase></Purchase>

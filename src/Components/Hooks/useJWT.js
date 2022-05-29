@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react';
 const useJWT = (user) => {
     const [token, setToken] = useState('');
     useEffect(() => {
+        const name = user?.displayName
         const email = user?.user?.email;
-        const currentUser = { email: email };
+        const currentUser = { email: email, name: name };
         // console.log('from useJWT ', currentUser);
         if (email) {
             fetch(`http://localhost:5000/user/${email}`, {

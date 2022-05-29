@@ -9,7 +9,7 @@ const Tools = () => {
 
 
     const navigateToPurchase = (_id) => {
-        console.log(_id)
+        // console.log(_id)
         navigate(`/tools/${_id}`)
     };
 

@@ -47,7 +47,7 @@ const Purchase = () => {
         const phone = event.target.phoneNumber.value;
         const address = event.target.address.value;
 
-        const order = { email, userName, productName, quantity, totalPrice, phone, address }
+        const order = { email, userName, productName, quantity, totalPrice, phone, address, img }
 
 
         fetch('http://localhost:5000/order', {
@@ -78,8 +78,8 @@ const Purchase = () => {
     })
 
     return (
-        <div style={{ backgroundImage: `url(${img})` }} >
-            <div className='flex justify-center items-center'>
+        <div style={{ backgroundImage: `url(${img})` }}  >
+            <div className='flex justify-center items-center' >
                 <div className="hero h-full g-base-200">
                     <div className="hero-content flex-col lg:flex-row-reverse">
                         <div className="text-center lg:text-left bg-base-200 p-10">
@@ -178,9 +178,10 @@ const Purchase = () => {
                     </div>
                 </div>
 
-                <label htmlFor="review-modal" ref={openRef} className=" hidden btn modal-button">open modal</label>
-                {toolId && <ReviewModal data={toolId} />}
+
             </div>
+            <label htmlFor="review-modal" ref={openRef} className=" hidden btn modal-button">open modal</label>
+            {toolId && <ReviewModal data={toolId} />}
 
             <div className='justify-center bg-base-200 py-5'>
                 <h2 className='mx-auto font-bold text-3xl'>Relevent Reviews</h2>
